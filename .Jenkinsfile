@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-             echo 'clone core project'
-             git url: 'https://github.com/jitucloud/coreproject.git'
+             echo 'clone core test project'          
           }
         }
         stage('test'){
