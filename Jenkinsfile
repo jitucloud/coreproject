@@ -1,3 +1,6 @@
+def apptype = "apptype1"
+def appname = "appname1"
+
 pipeline { 
     agent any 
     options {
@@ -6,24 +9,23 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-             echo 'figure out appname and apptype using grovy script'  
-             echo GIT_COMMIT %GIT_COMMIT% 
-             echo 'clone core test project'          
+             echo 'figure out ${apptype} and ${appname1} using grovy script'  
           }
         }
         stage('test'){
-             steps {
-             echo 'clone unit test project'
-             }
+            steps {
+             echo 'clone generic unit test project'
+          }
         }
         stage('run test'){
-             steps {
+            steps {
              echo 'run test against the apptype and appname'
-             }
+          }
         }
         stage('merge') {
             steps {
              echo 'merge feature to master'
-        }}
+          }
+        }
     }
 }
