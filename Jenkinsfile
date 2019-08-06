@@ -7,6 +7,15 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+        stage('prepration') {
+           agent { label 'master'}
+           environment {
+               JENKINS_PATH = sh(script: 'pwd', , returnStdout: true).trim()
+           }
+            steps {
+             echo 'figure out ${apptype} and ${appname1} using grovy script'  
+          }
+        }
         stage('clone') {
             steps {
              echo 'figure out ${apptype} and ${appname1} using grovy script'  
