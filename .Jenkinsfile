@@ -4,21 +4,20 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') { 
-            steps { 
-                sh 'make' 
-            }
-        }
-        stage('Test'){
+        stage('clone') {
             steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
-            }
+             echo 'clone core project'
+             git url: 'https://github.com/jitucloud/coreproject.git'
+          }
         }
-        stage('Deploy') {
+        stage('test'){
+             steps {
+             echo 'clone unit test project'
+             }
+        }
+        stage('merge') {
             steps {
-                sh 'make publish'
-            }
-        }
+             echo 'merge feature to master'
+        }}
     }
 }
