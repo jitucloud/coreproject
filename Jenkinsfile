@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
+             echo GIT_COMMIT %GIT_COMMIT% 
              echo 'clone core test project'          
           }
         }
