@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
+             echo 'figure out appname and apptype using grovy script'  
              echo GIT_COMMIT %GIT_COMMIT% 
              echo 'clone core test project'          
           }
@@ -13,6 +14,11 @@ pipeline {
         stage('test'){
              steps {
              echo 'clone unit test project'
+             }
+        }
+        stage('run test'){
+             steps {
+             echo 'run test against the apptype and appname'
              }
         }
         stage('merge') {
