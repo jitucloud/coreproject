@@ -1,6 +1,3 @@
-def apptype = "apptype1"
-def appname = "appname1"
-
 pipeline { 
     agent any 
     options {
@@ -8,17 +5,15 @@ pipeline {
     }
     stages {
         stage('prepration') {
-           agent { label 'master'}
            environment {
-               JENKINS_PATH = sh(script: 'pwd', , returnStdout: true).trim()
+               apptype = 'apptype1'
+               appname = 'appname1'
            }
-            steps {
-             echo 'figure out ${apptype} and ${appname1} using grovy script'  
-          }
-        }
-        stage('clone') {
-            steps {
-             echo 'figure out ${apptype} and ${appname1} using grovy script'  
+          steps {
+             echo 'figure out the apptype and appname using some grovy'  
+             print(env.apptype)
+             print(env.appname)
+
           }
         }
         stage('test'){
