@@ -3,7 +3,7 @@ from configobj import ConfigObj
 
 class TestStringMethods(unittest.TestCase):    
    def setUp(self):
-      self.config = ConfigObj('parent/apptype1/appname1/app.conf')
+      self.config = ConfigObj('src/apptype1/appname1/default/app.conf')
 
    def test_is_visible_exists(self):      
       self.is_visible_value= self.config['report']['is_visible']

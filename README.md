@@ -3,4 +3,4 @@
 
 ### run apptype1 unit test cases
 
-> python -m unittest discover -s parenttest/apptype1
+> python -m unittest discover -s tests/apptype1
