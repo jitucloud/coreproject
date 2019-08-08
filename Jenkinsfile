@@ -24,6 +24,7 @@ pipeline {
         stage('run test'){
             steps {
              echo 'run test against the apptype and appname'
+             sh 'python -m xmlrunner discover -s tests/apptype1 -o junit-reports'
           }
         }
         stage('merge') {
