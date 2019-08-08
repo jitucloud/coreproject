@@ -19,6 +19,8 @@ pipeline {
         stage('test'){
             steps {
              echo 'clone generic unit test project'
+             sh 'pip install -r requirements.txt'
+
           }
         }
         stage('run test'){
