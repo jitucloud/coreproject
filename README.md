@@ -4,3 +4,6 @@
 ### run apptype1 unit test cases
 
 > python -m unittest discover -s tests/apptype1
+
+> python -m xmlrunner discover -s tests/apptype1 -o junit-reports
+
