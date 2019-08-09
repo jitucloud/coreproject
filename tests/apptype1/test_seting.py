@@ -1,25 +1,27 @@
 import unittest
 import xmlrunner
+import test_baseclass
 from configobj import ConfigObj
 
-class TestStringMethods(unittest.TestCase):    
+class TestSettingConfig(test_baseclass.BaseTestCase):   
    def setUp(self):
-      self.config = ConfigObj('src/apptype1/appname1/metadata/setting.conf')
+      super(TestSettingConfig, self).setUp()
+      self.settingConfig = ConfigObj(self.config['baseAppPath'] + '/apptype1/appname1/metadata/setting.conf')
 
    def test_is_visible_exists(self):      
-      self.is_visible_value= self.config['report']['is_visible']
+      self.is_visible_value= self.settingConfig['report']['is_visible']
       self.assertIsNotNone(self.is_visible_value)
 
    def test_auth_required_exists(self):      
-      self.auth_required_value= self.config['report']['auth_required']
+      self.auth_required_value= self.settingConfig['report']['auth_required']
       self.assertIsNotNone(self.auth_required_value)
 
    def test_is_visible(self):      
-      self.is_visible_value= self.config['report']['is_visible']
+      self.is_visible_value= self.settingConfig['report']['is_visible']
       self.assertEqual(self.is_visible_value, 'true')
       
    def test_auth_required(self):
-      self.auth_required_value= self.config['report']['auth_required']
+      self.auth_required_value= self.settingConfig['report']['auth_required']
       self.assertEqual(self.auth_required_value, 'false')
       
 
