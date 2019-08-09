@@ -8,6 +8,8 @@
  > docker run -d -p 8080:8080 -p 50000:50000 -v c:/workspace/personal/code/coreprojectvolume:/var/jenkins_home demojenkins 
 
 ### Python demo app and demo unittest sample
+#### run the requirement.txt to install all dependecies for test project
+> pip install -r tests/requirements.txt
 #### run apptype1 unit test cases
  > python -m unittest discover -s tests/apptype1
 #### run apptype1 and unit test and reports
