@@ -1,5 +1,4 @@
 import unittest
-import xmlrunner
 import test_baseclass
 from configobj import ConfigObj
 
@@ -26,11 +25,7 @@ class TestSettingConfig(test_baseclass.BaseTestCase):
       
 
 if __name__ == '__main__':
-    unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
-        # these make sure that some options that are not applicable
-        # remain hidden from the help menu.
-        failfast=False, buffer=False, catchbreak=False)
+    unittest.main()
 
 
 

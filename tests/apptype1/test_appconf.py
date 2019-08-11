@@ -1,4 +1,3 @@
-import xmlrunner
 from configobj import ConfigObj
 import test_baseclass
 import unittest
@@ -25,13 +24,8 @@ class TestAppConfig(test_baseclass.BaseTestCase):
       self.auth_required_value= self.appConfig['report']['auth_required']
       self.assertEqual(self.auth_required_value, 'false')
   
-  
 if __name__ == '__main__':
-    unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
-        # these make sure that some options that are not applicable
-        # remain hidden from the help menu.
-        failfast=False, buffer=False, catchbreak=False)
+    unittest.main()
 
 
 
